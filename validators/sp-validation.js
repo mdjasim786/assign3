@@ -1,7 +1,7 @@
 const joi = require('joi');
-
+let spValidation = {
 //register validation
-let validateRegister = (req, res, next) => {
+validateRegister : (req, res, next) => {
     let data = req.body;
     console.log("-----" + data);
     const schema = joi.object().keys({
@@ -25,10 +25,10 @@ let validateRegister = (req, res, next) => {
     } catch (error) {
         throw new error
     }
-}
+},
 
 //login validation
-let loginValidation = (req, res, next) => {
+loginValidation : (req, res, next) => {
     let data = req.body;
     console.log("-----" + data);
     const schema = joi.object().keys({
@@ -47,11 +47,11 @@ let loginValidation = (req, res, next) => {
     } catch (error) {
         throw new error
     }
-}
+},
 
 
 //update validation
-let updateValidation = (req, res, next) => {
+updateValidation : (req, res, next) => {
     let data = req.body;
     const schema = joi.object().keys({
         name: joi.string(),
@@ -74,12 +74,9 @@ let updateValidation = (req, res, next) => {
         throw new error
     }
 }
-
-
-
-
-module.exports = {
-    validateRegister,
-    loginValidation,
-    updateValidation
 }
+
+
+
+
+module.exports = spValidation;

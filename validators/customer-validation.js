@@ -1,6 +1,6 @@
 const joi = require('joi');
 
-let validation = {
+let customerValidation = {
 //regitser validation
 validateRegister : (req, res, next) => {
     let data = req.body;
@@ -80,4 +80,4 @@ updateValidation : (req, res, next) => {
 
 
 
-module.exports = validation;
+module.exports = customerValidation;
